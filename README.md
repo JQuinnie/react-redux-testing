@@ -14,4 +14,10 @@ The React library only functions correctly if its being executed inside the brow
 
 ### Enzyme
 
-Open source package made for testing React components more easily, closely configured with how React works.
+Open source package made for testing React components more easily, closely configured with how React works. Enzyme allows tests to skip the entire process of rendering the components into a div.
+
+#### Enzyme API Capabilities
+
+1. Static - Render the given component and return plain HTML, returns an object that contains just that HTML
+2. Shallow - Render _just_ the given component and none of its children, test one component in isolation, returns a component
+3. Full DOM - Render the component and all of its children + let us modify it afterwards, returns an object
