@@ -2,7 +2,7 @@
 
 - React, Redux and Jest
 
-### 3 Step Testing Guideline
+## 3 Step Testing Guideline
 
 1. Look at each individual part of your application (every component, reducer, action creator, etc.)
 2. Imagine telling someone 'here is what this piece of code does, its purpose and what its suppose to do'

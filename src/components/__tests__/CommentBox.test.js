@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import Root from 'Root';
 import CommentBox from 'components/CommentBox';
 
 let wrapped;
@@ -7,11 +8,16 @@ let wrapped;
 beforeEach(() => {
   // using full DOM from enzyme by mounting to virtual JSDOM
   // enzyme shallow would have worked to test this component
-  wrapped = mount(<CommentBox />);
+  // any component that is wrapped by the Root tag is going to automatically think that it is part of Redux app
+  wrapped = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+  );
 });
 
 afterEach(() => {
-  // clean up by removing component from JSDOM so it will not interfere with other components that are created in other tests
+  // clean up by removing component from JSDOM so it will not interfere with other components in other tests
   // good practice for Full DOM enzyme renders
   wrapped.unmount();
 });
