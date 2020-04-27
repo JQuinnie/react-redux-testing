@@ -21,3 +21,7 @@ Open source package made for testing React components more easily, closely confi
 1. Static - Render the given component and return plain HTML, returns an object that contains just that HTML
 2. Shallow - Render _just_ the given component and none of its children, test one component in isolation, returns a component
 3. Full DOM - Render the component and all of its children + let us modify it afterwards, returns an object
+
+#### Redux Promise
+
+Middleware that is used to handle asynchronous action creators or action creators that try to make network requests.

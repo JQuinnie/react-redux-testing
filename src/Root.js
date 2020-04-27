@@ -1,15 +1,19 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import reduxPromise from 'redux-promise';
 import reducers from 'reducers';
 
-// Helper function sole purpose is to going to be to set up the Redux store and the Provider tag
-export default (props) => {
+// Helper function sole purpose is going to be to set up the Redux store and the Provider tag
+// props.initialState added for Redux testing
+export default ({ children, initialState = {} }) => {
+  const store = createStore(reducers, initialState, applyMiddleware(reduxPromise));
+
   return (
-    <Provider store={createStore(reducers, {})}>
+    <Provider store={store}>
       {
         // React contructor, allow this component to wrap other components
-        props.children
+        children
       }
     </Provider>
   );
