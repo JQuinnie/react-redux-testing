@@ -22,6 +22,14 @@ Open source package made for testing React components more easily, closely confi
 2. Shallow - Render _just_ the given component and none of its children, test one component in isolation, returns a component
 3. Full DOM - Render the component and all of its children + let us modify it afterwards, returns an object
 
-#### Redux Promise
+### Redux Promise
 
 Middleware that is used to handle asynchronous action creators or action creators that try to make network requests.
+
+## Integration Tests
+
+Simultaneiously test many different parts of our application. A single integration test can touch the entire scope of the application with one chunk of code or one test or the entire flow.
+
+### Moxios Library
+
+Mock out Axios api. Moxios can be told to watch for attempted requests and anytime it does, Axios will get tricked into thinking it instantly gets a response (fake out requests), no network request is going to be actually created, but mock data will be returned. Solely to help out around the test environment.
